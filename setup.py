@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="tokenizer-eamf",  # Nome do pacote no PyPI (escolha um único)
+    name="pytok",  # Nome do pacote no PyPI (escolha um único)
     version="0.1.0",  # Versão inicial do pacote
     author="Eduardo A M Freitas",  # Nome do autor
     author_email="eduardo.freitas@camara.leg.br",  # Email do autor
