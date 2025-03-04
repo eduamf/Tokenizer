@@ -17,7 +17,7 @@ def _get_long_description():
 
 def _get_project_version():
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    version_path = os.path.join(base_dir, "pyonmttok", "version.py")
+    version_path = os.path.join(base_dir, "pyonmttokwin", "version.py")
     version = {}
     with open(version_path, encoding="utf-8") as fp:
         exec(fp.read(), version)
@@ -47,11 +47,11 @@ if sys.platform == "darwin":
     ldflags.append("-Wl,-rpath,/usr/local/lib")
 elif sys.platform == "win32":
     cflags = ["/std:c++17", "/d2FH4-"]
-    package_data["pyonmttok"] = ["*.dll"]
+    package_data["pyonmttokwin"] = ["*.dll"]
 
 tokenizer_module = Extension(
-    "pyonmttok._ext",
-    sources=["pyonmttok/Python.cc"],
+    "pyonmttokwin._ext",
+    sources=["pyonmttokwin/Python.cc"],
     extra_compile_args=cflags,
     extra_link_args=ldflags,
     include_dirs=include_dirs,
@@ -60,7 +60,7 @@ tokenizer_module = Extension(
 )
 
 setup(
-    name="pyonmttok",
+    name="pyonmttokwin",
     version=_get_project_version(),
     license="MIT",
     description=(
@@ -89,12 +89,12 @@ setup(
     ],
     project_urls={
         "Forum": "https://forum.opennmt.net/",
-        "Source": "https://github.com/OpenNMT/Tokenizer/",
+        "Source": "https://github.com/eduamf/Tokenizer/",
     },
     keywords="tokenization opennmt unicode bpe sentencepiece subword",
     packages=find_packages(),
     package_data=package_data,
-    python_requires=">=3.6",
+    python_requires=">=3.9",
     setup_requires=["pytest-runner"],
     tests_require=["pytest"],
     ext_modules=[tokenizer_module],
