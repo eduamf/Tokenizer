@@ -61,7 +61,7 @@ tokenizer_module = Extension(
 
 setup(
     name="pyonmttokwin",
-    version=_get_project_version(),
+    version="1.0.0", # _get_project_version()
     license="MIT",
     description=(
         "Fast and customizable text tokenization library with "
